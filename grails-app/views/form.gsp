@@ -79,7 +79,7 @@
 <!-- Header -->
 <header id="header">
     <h1>
-        <a href="index.html">Attendance Track</a>
+        <a href="index.html">GeoZone</a>
     </h1>
     <nav id="nav">
         <ul class="g">
@@ -545,7 +545,7 @@ function lat() {
     <div id="curpos"></div>
     <div id="cursel"></div>
     %{--<div id="note"><small>Note: markers can be selected, but are not graphically indicated; can be deleted, but cannot have their color changed.</small></div>--}%
-    <g:link controller="Geozone" action="Geozone">
+    <g:link controller="geozone" action="geozone">
         <g:actionSubmit value="Save"/>
     </g:link>
 </div>

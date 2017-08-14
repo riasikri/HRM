@@ -4,7 +4,7 @@ import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
 import org.springframework.transaction.annotation.Propagation
 
-@Secured(['ROLE_USER','ROLE_ADMIN'])
+@Secured('permitAll')
 class SuperController {
 
     def testRole
@@ -12,7 +12,6 @@ class SuperController {
     def springSecurityService
 
     //Company*****************************************************************************************************************
-   @Secured('permitAll')
     def newCompany() {
         def name = springSecurityService.currentUser.getUsername()
         def moduleNames = Module.list().moduleName
@@ -112,7 +111,7 @@ class SuperController {
         redirect(controller: 'secure')
     }
     //Module******************************************************************************************************************
-    @Secured('permitAll')
+
     def newModule(){
         def name = springSecurityService.currentUser.getUsername()
         render(view: 'newModule', model: [username:name])
@@ -161,8 +160,6 @@ class SuperController {
 
     //Role********************************************************************************************************************
 
-
-    @Secured('permitAll')
     def newRole(){
         def name = springSecurityService.currentUser.getUsername()
         render(view: 'newRole', model: [username: name])

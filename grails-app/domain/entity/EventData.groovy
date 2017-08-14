@@ -38,12 +38,18 @@ class EventData {
     def beforeInsert(){
         def geo = Geozone.findById(geozoneId)
 
-
+        println("lllllllllllllllllllll"+geo.latitude1)
         def crLatitude1=Double.parseDouble(geo.latitude1)
         def crLongitude1=Double.parseDouble(geo.longitude1)
 
+        println("lllllllllllllllllllll"+crLatitude1)
+        println("lllllllllllllllllllll"+crLongitude1)
+
         def pointLatitude=Double.parseDouble(latitude)
         def pointLongitude=Double.parseDouble(longititude)
+
+        println("lllllllllllllllllllll"+pointLatitude)
+        println("lllllllllllllllllllll"+pointLongitude)
         def tf
 
         if(geo.radious!='undefined') {

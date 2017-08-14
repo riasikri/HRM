@@ -82,7 +82,7 @@
 <!-- Header -->
 <header id="header">
     <h1>
-        <a href="index.html">GeoZone</a>
+        <a href="index.html">Attendance Track</a>
     </h1>
     <nav id="nav">
         <ul class="g">

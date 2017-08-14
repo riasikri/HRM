@@ -20,7 +20,7 @@ class GeozoneController {
        // render  model:[geozoneList: Geozone.list(params),geozoneCount: Geozone.count()]
     }
 
-    @Secured(['ROLE_USER','ROLE_ADMIN'])
+//    @Secured(['ROLE_USER','ROLE_ADMIN'])
     def geozone(Integer max){
         println("*/*/*//*/*/**//*/*/*/*/*/*/*/*")
         params.max = Math.min(max ?: 10, 10)
@@ -43,7 +43,7 @@ class GeozoneController {
     }
 
 
-    @Secured(['ROLE_USER','ROLE_ADMIN'])
+//    @Secured(['ROLE_USER','ROLE_ADMIN'])
     def ft(){
         println("89898989898989898988989898989")
         def path=params.str;
@@ -81,8 +81,6 @@ class GeozoneController {
             j=j+1
             i = i+1
         }
-
-
 
 
         geozone.latitude1=lat[0]
@@ -130,7 +128,7 @@ class GeozoneController {
         render geozone.getId()
     }
 
-    @Secured(['ROLE_USER','ROLE_ADMIN'])
+//    @Secured(['ROLE_USER','ROLE_ADMIN'])
     def form() {
        //println("************************//////////////////////"+params.companyId)
        //Geozone geozone=Geozone.findById(params.id)

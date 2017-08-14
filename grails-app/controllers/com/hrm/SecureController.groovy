@@ -26,6 +26,7 @@ class SecureController {
         }
     }
 
+    @Secured('permitAll')
     def superAdmin(Integer max){
         def name = springSecurityService.currentUser.getUsername()
         params.max = Math.min(max ?: 3,3)

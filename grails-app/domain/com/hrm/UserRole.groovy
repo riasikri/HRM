@@ -15,12 +15,6 @@ class UserRole implements Serializable {
 	User user
 	Role role
 
-	UserRole(User u, Role r) {
-		this()
-		user = u
-		role = r
-	}
-
 	@Override
 	boolean equals(other) {
 		if (other instanceof UserRole) {

@@ -10,8 +10,9 @@ import java.text.SimpleDateFormat
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
-//@Transactional(readOnly = true)
+@Transactional(readOnly = true)
 @Secured(['ROLE_USER','ROLE_ADMIN'])
+//@Secured('permitAll')
 class EventDataController {
     def geogoneService
     def point
@@ -22,7 +23,7 @@ class EventDataController {
         params.max = Math.min(max ?: 10, 100)
         respond EventData.list(params), model:[eventDataCount: EventData.count()]
     }
-    //@Secured(['ROLE_USER','ROLE_ADMIN'])
+    @Secured('permitAll')
     def eventList(Integer max) {
         params.max = Math.min(max ?: 10, 100)
        render view: 'event', model:[eventList: EventData.list(params),eventDataCount: EventData.count(),glist:Geozone.list(params), geozoneCount: Geozone.count()]

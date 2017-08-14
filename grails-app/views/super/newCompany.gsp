@@ -158,7 +158,7 @@
     <div class="box, col-md-12" style="border-radius:5px; background-color: #f7f6f6; padding-top: 15px; padding-bottom: 15px">
         <div class="inner" style="font-size:20px;height: auto">
             <g:form name="compForm" url="[controller:'super', action:'saveCompany']">
-                <fieldset>Admin Information</fieldset>
+                <fieldset>User Information</fieldset>
                 <hr>
                 <div class="col-md-12" style="padding: 10px 0 10px 0" >
                     <div class="col-md-6" style="padding: 5px" >

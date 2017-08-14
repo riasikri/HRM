@@ -1,6 +1,7 @@
 package entity
 
 import com.hrm.Company
+import com.hrm.Employee
 
 import java.sql.Time
 
@@ -70,8 +71,6 @@ class Geozone {
 
 
 
-
-
   //  static belongsTo=[company:Company]
 
     static constraints = {
@@ -131,8 +130,9 @@ class Geozone {
     //    CenterLatitude(nullable: true,blank:true)
       //  CenterLongitude(nullable: true,blank:true)
         country(nullable: true,blank:true)
-       geozoneId(nullable: true,blank:true)
+        geozoneId(nullable: true,blank:true)
         company(nullable: true,blank:true)
+
 
     }
 

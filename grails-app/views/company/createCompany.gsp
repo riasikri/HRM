@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -70,6 +71,27 @@
             alert("Required fields are empty")
         }
 
+        //Username check-------------------
+        <% if (user != null) {
+            for (com.administrate.User userDetail : user) {
+        %>
+
+        if(document.getElementById('username').value == "${userDetail.getUsername()}"){
+             userCheck=false;
+          }
+        <% }
+        } %>
+
+        //Company name check-------------------
+        <% if (company != null) {
+            for (com.grails.Company companyDetail : company) {
+        %>
+
+        if(document.getElementById('companyName').value == "${companyDetail.getCompanyName()}"){
+             compCheck=false;
+          }
+        <% }
+        } %>
         //Submission-------------------------
         if(req){
             if(userCheck){

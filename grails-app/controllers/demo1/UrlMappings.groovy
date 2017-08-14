@@ -21,6 +21,8 @@ class UrlMappings {
         "/api/eventdata/$id?"(controller:"eventData", action:"update", method: 'PUT')
         "/api/eventdata/$id?"(controller:"eventData", action:"delete", method: 'DELETE')
 
+
+
         "/"( view:"/index")
 
         "500"(view:'/error')

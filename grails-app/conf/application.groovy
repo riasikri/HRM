@@ -17,17 +17,17 @@ grails.plugin.springsecurity.interceptUrlMap = [
 		[pattern: 'images*',   access: ['permitAll']],
 		[pattern: 'favicon.ico', access: ['permitAll']],
 		[pattern: '/user/register*', access: ['permitAll']],
-		[pattern: '/api/eventdata', access: ['isFullyAuthenticated()']],
 		[pattern: '/api/logout',        access: ['isFullyAuthenticated()']],
+//		[pattern: '/api/eventdata',    access: ['isFullyAuthenticated()']],
 		[pattern: '/api/users',    access: ['isFullyAuthenticated()']],
 		[pattern: '/**',             access: ['isFullyAuthenticated()']]
 
 ]
+/*grails.plugin.springsecurity.filterChain.chainMap = [
+		[pattern: '/api*//**', filters:'JOINED_FILTERS,-anonymousAuthenticationFilter,-exceptionTranslationFilter,-authenticationProcessingFilter,-securityContextPersistenceFilter'],
+		[pattern: '*//**', filters:'JOINED_FILTERS,-restTokenValidationFilter,-restExceptionTranslationFilter']
+]*/
 
-grails.plugin.springsecurity.filterChain.chainMap = [
-		[pattern: '/api/**', filters:'JOINED_FILTERS,-exceptionTranslationFilter,-authenticationProcessingFilter,-securityContextPersistenceFilter'],
-		[pattern: '/**', filters:'JOINED_FILTERS,-restTokenValidationFilter,-restExceptionTranslationFilter']
-]
 
 grails.plugin.springsecurity.rest.logout.endpointUrl = '/api/logout'
 grails.plugin.springsecurity.rest.token.validation.useBearerToken = false
@@ -38,21 +38,46 @@ grails.plugin.springsecurity.rest.token.storage.memcached.password = ''
 grails.plugin.springsecurity.rest.token.storage.memcached.expiration = 86400
 
 grails.plugin.springsecurity.filterChain.chainMap = [
-		[pattern: '/assets*',      filters: 'none'],
-		[pattern: 'js*',       filters: 'none'],
-		[pattern: 'css*',      filters: 'none'],
-		[pattern: 'images*',   filters: 'none'],
-		[pattern: 'favicon.ico', filters: 'none'],
-// [pattern: '/api*',         filters: 'none'],
+		[pattern: '/assets/**',      filters: 'none'],
+		[pattern: '/**/js/**',       filters: 'none'],
+		[pattern: '/**/css/**',      filters: 'none'],
+		[pattern: '/**/images/**',   filters: 'none'],
+		[pattern: '/**/favicon.ico', filters: 'none'],
+		[pattern: '/api/**',         filters: 'JOINED_FILTERS,-exceptionTranslationFilter,-authenticationProcessingFilter,-securityContextPersistenceFilter'],
 		[pattern: '/index',          filters: 'none'],
 		[pattern: '/index.gsp',      filters: 'none'],
 		[pattern: '/shutdown',      filters: 'none'],
 		[pattern: '/user/register*',     filters: 'none'],
 		[pattern: '/error',         filters: 'none'],
 		[pattern: '/',         filters: 'none'],
-		[pattern: '/**',             filters: 'JOINED_FILTERS']
+		[pattern: '/**',             filters: 'JOINED_FILTERS,-restTokenValidationFilter,-restExceptionTranslationFilter']
 ]
+
 grails.mime.types = [
 		json:          ['application/json', 'text/json'],
 		xml:           ['text/xml', 'application/xml']
 ]
+
+
+/*grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+	[pattern: '/',               access: ['permitAll']],
+	[pattern: '/error',          access: ['permitAll']],
+	[pattern: '/index',          access: ['permitAll']],
+	[pattern: '/index.gsp',      access: ['permitAll']],
+	[pattern: '/shutdown',       access: ['permitAll']],
+	[pattern: '/assets*//**',      access: ['permitAll']],
+	[pattern: '*//**//*js*//**',       access: ['permitAll']],
+	[pattern: '*//**//*css*//**',      access: ['permitAll']],
+	[pattern: '*//**//*images*//**',   access: ['permitAll']],
+	[pattern: '*//**//*favicon.ico', access: ['permitAll']]
+]*/
+
+/*grails.plugin.springsecurity.filterChain.chainMap = [
+	[pattern: '/assets*//**',      filters: 'none'],
+	[pattern: '*//**//*js*//**',       filters: 'none'],
+	[pattern: '*//**//*css*//**',      filters: 'none'],
+	[pattern: '*//**//*images*//**',   filters: 'none'],
+	[pattern: '*//**//*favicon.ico', filters: 'none'],
+	[pattern: '*//**',             filters: 'JOINED_FILTERS']
+]*/
+

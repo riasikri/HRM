@@ -50,6 +50,9 @@ class AdminController {
         redirect(controller: 'admin', action: 'employee')
     }
 
+
+
+
     def employee(){
         def name = springSecurityService.currentUser.getUsername()
         def company = Employee.findByUsername(name).company

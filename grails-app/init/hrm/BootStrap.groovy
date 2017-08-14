@@ -31,19 +31,11 @@ class BootStrap {
     def init = { servletContext -> registerMarshallers()
 
         def adminRole = new Role(authority: 'ROLE_ADMIN').save()
-        def userRole = new Role(authority:'ROLE_USER').save()
+        def userRole = new Role(authority: 'ROLE_USER').save()
 
         def testUser = new User(username: 'me', password: 'password').save()
+
         UserRole.create testUser, adminRole
-
-        /*def teUser = new User(username: 'me2', password: '123').save()
-        UserRole.create teUser, userRole, true
-
-        for (user in User.findAllWhere(enabled:true)) {
-            if (!UserRole.findByUserAndRole(user, userRole)) {
-                UserRole.create user, adminRole
-            }
-        }*/
 
         UserRole.withSession {
             it.flush()
@@ -61,6 +53,7 @@ class BootStrap {
             ]
             return map
         }
+
         JSON.registerObjectMarshaller(EventData) {
 
             def map = [
@@ -77,7 +70,4 @@ class BootStrap {
         }
 
     }
-
-
-//    def testUser = new Role(authority:'ROLE_USER').save()
 }

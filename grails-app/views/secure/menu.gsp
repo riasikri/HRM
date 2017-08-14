@@ -7,7 +7,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="Stylesheet.css">
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>ATTEDANCE | DETAIL</title>
+    <title>ATTENDANCE | DETAIL</title>
     <style>
     [type="date"] {
         background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
@@ -44,7 +44,7 @@
 <div class="col-md-12">
 <div class="col-md-12" style="background-color: white; padding:4px; padding-left: 0px; padding-right: 0px">
     <div class="col-md-10">
-        <h2 style="text-align:center;color:darkorange;font-family: Verdana" >ATTEDANCE DETAIL</h2>
+        <h2 style="text-align:center;color:darkorange;font-family: Verdana" >ATTENDANCE DETAIL</h2>
         <g:form controller="secure" action="index">
 
 
